@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4EA4257-315C-44E0-BB0C-3FC24ECB9ECD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>imbNLP.Data</RootNamespace>
+    <AssemblyName>imbNLP.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>bin\Debug\imbNLP.Data.xml</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>imbNLP.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.3.8.0\lib\net40\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net40\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net40\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net40\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bdev.Net.Dns, Version=1.0.4.0, Culture=neutral, PublicKeyToken=217d47f649bccd2c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bdev.Net.Dns.1.0.4\lib\Bdev.Net.Dns.dll</HintPath>
+    </Reference>
+    <Reference Include="BrightstarDB, Version=1.13.3.0, Culture=neutral, PublicKeyToken=e08b12254e74c9d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\BrightstarDBLibs.1.13.3\lib\net40\BrightstarDB.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.16.3.0\lib\net40\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="dotNetRDF, Version=1.0.9.3683, Culture=neutral, PublicKeyToken=6055ffe4c97cc780, processorArchitecture=MSIL">
+      <HintPath>..\packages\dotNetRDF.1.0.9.3683\lib\net40\dotNetRDF.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.6.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.5\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="imbACE.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbACE.0.1.0\lib\net40\imbACE.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="imbACE.Network, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbACE.0.1.0\lib\net40\imbACE.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="imbACE.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbACE.0.1.0\lib\net40\imbACE.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.Core, Version=0.1.6541.17791, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.0\lib\net40\imbSCI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.Data, Version=0.1.6541.14062, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.0\lib\net40\imbSCI.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.DataComplex, Version=0.1.6541.17792, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.0\lib\net40\imbSCI.DataComplex.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.Reporting, Version=0.1.6541.17792, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.0\lib\net40\imbSCI.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.10\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHunspell, Version=1.2.5554.16953, Culture=neutral, PublicKeyToken=1ac793ea843b4366, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHunspell.1.2.5554.16953\lib\net\NHunspell.dll</HintPath>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Remotion.Linq, Version=1.13.122.1, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\BrightstarDBLibs.1.13.3\lib\net40\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VDS.Common, Version=1.6.0.0, Culture=neutral, PublicKeyToken=ab5f4eb908061bf0, processorArchitecture=MSIL">
+      <HintPath>..\packages\VDS.Common.1.6.0\lib\net40-client\VDS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="basicLanguageEnum.cs" />
+    <Compile Include="basicLanguageParameterEnum.cs" />
+    <Compile Include="basic\basicLanguage.cs" />
+    <Compile Include="basic\basicLanguageCheck.cs" />
+    <Compile Include="basic\basicLanguageCollection.cs" />
+    <Compile Include="basic\basicLanguageTools.cs" />
+    <Compile Include="basic\enums\basicLanguageFileFormatType.cs" />
+    <Compile Include="basic\enums\huspellFileFormatType.cs" />
+    <Compile Include="basic\enums\languageFile.cs" />
+    <Compile Include="basic\enums\wordSyllableDetectionMethod.cs" />
+    <Compile Include="basic\enums\wordVariationsMethodType.cs" />
+    <Compile Include="basic\languageManagerAlphabet.cs" />
+    <Compile Include="basic\languageManagerHunspell.cs" />
+    <Compile Include="case\enums\face.cs" />
+    <Compile Include="case\enums\gender.cs" />
+    <Compile Include="case\enums\genre.cs" />
+    <Compile Include="case\enums\gramaticalCase.cs" />
+    <Compile Include="case\enums\number.cs" />
+    <Compile Include="case\enums\numberSubType.cs" />
+    <Compile Include="case\enums\root.cs" />
+    <Compile Include="case\enums\wordForms.cs" />
+    <Compile Include="case\wordCase.cs" />
+    <Compile Include="case\wordCaseFactors.cs" />
+    <Compile Include="enums\contentBlockGenericType.cs" />
+    <Compile Include="enums\contentEditorColorMode.cs" />
+    <Compile Include="enums\contentRelationQueryType.cs" />
+    <Compile Include="enums\contentRelationType.cs" />
+    <Compile Include="enums\contentTokenOrigin.cs" />
+    <Compile Include="enums\flags\contentBlockFlag.cs" />
+    <Compile Include="enums\flags\contentParagraphFlag.cs" />
+    <Compile Include="enums\flags\contentSentenceFlag.cs" />
+    <Compile Include="enums\flags\contentTokenFlag.cs" />
+    <Compile Include="enums\nlpBaseInputSource.cs" />
+    <Compile Include="enums\nlpChunkType.cs" />
+    <Compile Include="enums\nlpElementTypes.cs" />
+    <Compile Include="enums\nlpParagraphGenericType.cs" />
+    <Compile Include="enums\nlpSentenceBasicType.cs" />
+    <Compile Include="enums\nlpSentenceGenericType.cs" />
+    <Compile Include="enums\nlpSyllableType.cs" />
+    <Compile Include="enums\nlpTextCase.cs" />
+    <Compile Include="enums\nlpTokenBaseType.cs" />
+    <Compile Include="enums\nlpTokenGenericType.cs" />
+    <Compile Include="enums\tokenizationType.cs" />
+    <Compile Include="evaluate\multiLanguageEvaluation.cs" />
+    <Compile Include="evaluate\multiLanguageEvaluationTask.cs" />
+    <Compile Include="evaluate\multiLanguageEvaluator.cs" />
+    <Compile Include="evaluate\textEvaluation.cs" />
+    <Compile Include="evaluate\textEvaluationResultEnum.cs" />
+    <Compile Include="evaluate\textEvaluator.cs" />
+    <Compile Include="extended\apertium\apertiumDictionaryResult.cs" />
+    <Compile Include="extended\apertium\apertiumDictNeedleSide.cs" />
+    <Compile Include="extended\apertium\apertiumDictQueryFlag.cs" />
+    <Compile Include="extended\apertium\apertiumDictQueryScope.cs" />
+    <Compile Include="extended\apertium\languageManagerApertium.cs" />
+    <Compile Include="extended\dict\core\tokenQuery.cs" />
+    <Compile Include="extended\dict\core\tokenQueryResolverBase.cs" />
+    <Compile Include="extended\dict\core\tokenQueryResponceCollection.cs" />
+    <Compile Include="extended\dict\core\tokenQueryResponse.cs" />
+    <Compile Include="extended\dict\core\tokenQueryResultEnum.cs" />
+    <Compile Include="extended\dict\core\tokenQuerySourceEnum.cs" />
+    <Compile Include="extended\dict\core\tokenResultEnum.cs" />
+    <Compile Include="extended\dict\dictTriplet.cs" />
+    <Compile Include="extended\dict\languageManagerDict.cs" />
+    <Compile Include="extended\domain\domainConceptEntry.cs" />
+    <Compile Include="extended\domain\domainConceptGraph.cs" />
+    <Compile Include="extended\domain\languageManagerConcepts.cs" />
+    <Compile Include="extended\enums\POS_srpLemKor.cs" />
+    <Compile Include="extended\extendedLanguage.cs" />
+    <Compile Include="extended\namedEntities\dataTableStringQueryEnum.cs" />
+    <Compile Include="extended\namedEntities\languageManagerDBNamedEntities.cs" />
+    <Compile Include="enums\namedEntity.cs" />
+    <Compile Include="extended\tokenGraphs\tokenGraph.cs" />
+    <Compile Include="extended\tokenGraphs\tokenGraphNode.cs" />
+    <Compile Include="extended\tokenGraphs\tokenGraphNodeType.cs" />
+    <Compile Include="extended\tokenGraphs\tokenGraphSet.cs" />
+    <Compile Include="extended\unitex\languageManagerUnitex.cs" />
+    <Compile Include="extended\wordnet\ITokenDictionaryTriplet.cs" />
+    <Compile Include="extended\wordnet\languageManagerWordnet.cs" />
+    <Compile Include="extended\wordnet\symsetSpark.cs" />
+    <Compile Include="extended\wordnet\WordnetQueryType.cs" />
+    <Compile Include="extended\wordnet\WordnetSource.cs" />
+    <Compile Include="extended\wordnet\wordnetSymsetResults.cs" />
+    <Compile Include="extended\wordnet\wordnetTriplet.cs" />
+    <Compile Include="imbLanguageFrameworkManager.cs" />
+    <Compile Include="MyEntityContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyEntityContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="semanticLexicon\Concept.cs" />
+    <Compile Include="semanticLexicon\console\lexFolder.cs" />
+    <Compile Include="semanticLexicon\console\lexiconConsole.cs" />
+    <Compile Include="semanticLexicon\console\lexiconConsoleSettings.cs" />
+    <Compile Include="semanticLexicon\console\lexiconConsoleState.cs" />
+    <Compile Include="semanticLexicon\console\lexiconConsoleWorkspace.cs" />
+    <Compile Include="semanticLexicon\console\listElementType.cs" />
+    <Compile Include="semanticLexicon\console\specialOperationEnum.cs" />
+    <Compile Include="semanticLexicon\core\IConcept.cs" />
+    <Compile Include="semanticLexicon\core\ILexiconItem.cs" />
+    <Compile Include="semanticLexicon\core\ITermInstance.cs" />
+    <Compile Include="semanticLexicon\core\ITermLemma.cs" />
+    <Compile Include="semanticLexicon\core\lexiconItemExpandEnum.cs" />
+    <Compile Include="semanticLexicon\core\lexiconItemTools.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreItem.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreItemCollection.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreItemEnumFlag.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreMode.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreModel.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreModelSet.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreModelSource.cs" />
+    <Compile Include="semanticLexicon\explore\termExploreProcedures.cs" />
+    <Compile Include="semanticLexicon\explore\termExplorer.cs" />
+    <Compile Include="semanticLexicon\lexiconResponse.cs" />
+    <Compile Include="semanticLexicon\morphology\morphActionEnum.cs" />
+    <Compile Include="semanticLexicon\morphology\morphMachine.cs" />
+    <Compile Include="semanticLexicon\morphology\morphMachineSerbian.cs" />
+    <Compile Include="semanticLexicon\morphology\morphRule.cs" />
+    <Compile Include="semanticLexicon\morphology\morphRuleMatch.cs" />
+    <Compile Include="semanticLexicon\morphology\morphRuleMatchSet.cs" />
+    <Compile Include="semanticLexicon\morphology\morphRuleSet.cs" />
+    <Compile Include="semanticLexicon\morphology\morphRuleSetAdjective.cs" />
+    <Compile Include="semanticLexicon\morphology\morphRuleSetNoun.cs" />
+    <Compile Include="semanticLexicon\posCase\gramCaseSet.cs" />
+    <Compile Include="semanticLexicon\posCase\gramFlagDeclarationParts.cs" />
+    <Compile Include="semanticLexicon\posCase\gramFlags.cs" />
+    <Compile Include="semanticLexicon\posCase\posConverter.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_animatness.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_clitic.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_definitness.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_degree.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_gender.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_gramaticalCase.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_negation.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_nounGroup.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_number.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_person.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_type.cs" />
+    <Compile Include="semanticLexicon\posCase\pos_verbform.cs" />
+    <Compile Include="semanticLexicon\procedures\corpusEntryFilterResult.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructionSettings.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructor.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructorProjectFolder.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructTaskFive.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructTaskFour.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructTaskOne.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructTaskState.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructTaskThree.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructTaskTwo.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconConstructTaskZero.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconQueries.cs" />
+    <Compile Include="semanticLexicon\procedures\lexiconTaskBase.cs" />
+    <Compile Include="semanticLexicon\semanticLexiconCache.cs" />
+    <Compile Include="semanticLexicon\semanticLexiconContext.cs" />
+    <Compile Include="semanticLexicon\semanticLexiconContext1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>semanticLexiconContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="semanticLexicon\semanticLexiconExtensions.cs" />
+    <Compile Include="semanticLexicon\semanticLexiconManager.cs" />
+    <Compile Include="semanticLexicon\semanticLexiconManagerSettings.cs" />
+    <Compile Include="semanticLexicon\semanticLexiconReviewTool.cs" />
+    <Compile Include="semanticLexicon\source\lexiconSourceFile.cs" />
+    <Compile Include="semanticLexicon\source\lexiconSourceFileList.cs" />
+    <Compile Include="semanticLexicon\source\lexiconSourceTypeEnum.cs" />
+    <Compile Include="semanticLexicon\TermInstance.cs" />
+    <Compile Include="semanticLexicon\TermLemma.cs" />
+    <Compile Include="semanticLexicon\term\TempInstance.cs" />
+    <Compile Include="semanticLexicon\term\TempLemma.cs" />
+    <Compile Include="semanticLexicon\term\termDocument.cs" />
+    <Compile Include="semanticLexicon\term\termDocumentSet.cs" />
+    <Compile Include="semanticLexicon\term\termGraph.cs" />
+    <Compile Include="semanticLexicon\term\termQueryDocument.cs" />
+    <Compile Include="semanticLexicon\term\termQueryDocumentSet.cs" />
+    <Compile Include="semanticLexicon\term\termSpark.cs" />
+    <Compile Include="semanticLexicon\term\termSparkArm.cs" />
+    <Compile Include="semanticLexicon\term\termTools.cs" />
+    <Compile Include="semanticLexicon\term\tokenDocument.cs" />
+    <Compile Include="semanticLexicon\term\tokenDocumentSet.cs" />
+    <Compile Include="textMap\DimensionMapBase.cs" />
+    <Compile Include="textMap\DimensionMapEntry.cs" />
+    <Compile Include="textMap\DimensionMapQueryResult.cs" />
+    <Compile Include="textMap\DimensionMapQueryResultEntry.cs" />
+    <Compile Include="textMap\DimensionMapQueryTakeMode.cs" />
+    <Compile Include="textMap\IDimensionMap.cs" />
+    <Compile Include="textMap\MultiDimensionMapBase.cs" />
+    <Compile Include="textMap\NamespaceDoc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hunspellx64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Hunspellx86.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="extended\alfabet.txt" />
+    <Content Include="imbNLP.ico" />
+    <Content Include="MyEntityContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyEntityContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="resources\lexical\apertium_hbs\modes.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="resources\lexical\unitex\srlat\Alphabet.txt" />
+    <Content Include="resources\lexical\unitex\srlat\Alphabet_sort.txt" />
+    <Content Include="resources\lexical\unitex\srlat\Corpus\Kandid63-UnicodeLE.txt" />
+    <Content Include="resources\lexical\unitex\srlat\Dela\latDelacf-NepromU.inf" />
+    <Content Include="resources\lexical\unitex\srlat\Dela\latDelacf-SrpskiU.inf" />
+    <Content Include="resources\lexical\unitex\srlat\Dela\latdelaf-SrpskiU.inf" />
+    <Content Include="resources\lexical\unitex\srlat\Elag\elag.lst" />
+    <Content Include="resources\lexical\unitex\srlat\Elag\tagset.def" />
+    <Content Include="resources\lexical\unitex\srlat\Inflection\Equivalences.txt" />
+    <Content Include="resources\lexical\unitex\srlat\Inflection\Morphology.txt" />
+    <Content Include="resources\lexical\unitex\srlat\log_svn_Serbian-Latin.txt" />
+    <Content Include="resources\lexical\unitex\srlat\Norm.txt" />
+    <Content Include="resources\lexical\unitex\srlat\system_dic.def" />
+    <Content Include="resources\lexical\unitex\srlat\system_dic_list.txt" />
+    <Content Include="resources\lexical\unitex\sr\ReadMe.txt" />
+    <Content Include="resources\lexical\unitex\sr\unitex_delacf_sr.inf" />
+    <Content Include="resources\lexical\unitex\sr\unitex_delaf_sr.inf" />
+    <Content Include="semanticLexicon\semanticLexiconContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>semanticLexiconContext1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\entities\" />
+    <Folder Include="resources\lexical\unitex\srlat\CasSys\Share\" />
+    <Folder Include="resources\lexical\unitex\srlat\Disamb\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="imbNLP.Data.licenseheader" />
+    <None Include="packages.config" />
+    <None Include="resources\lexical\apertium_hbs\aclocal.m4" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng-hbs.rlx" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng-hbs.t1x" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng-hbs.t2x" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng-hbs.t3x" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng-hbs_BS.lrx" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng-hbs_HR.lrx" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng-hbs_SR.lrx" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng.acx" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.eng.dix" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.hbs-eng.dix" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.hbs-eng.lrx" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.hbs-eng.t1x" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.hbs-eng.t2x" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.hbs-eng.t3x" />
+    <None Include="resources\lexical\apertium_hbs\apertium-hbs-eng.post-eng.dix" />
+    <None Include="resources\lexical\apertium_hbs\AUTHORS" />
+    <None Include="resources\lexical\apertium_hbs\ChangeLog" />
+    <None Include="resources\lexical\apertium_hbs\configure" />
+    <None Include="resources\lexical\apertium_hbs\configure.ac" />
+    <None Include="resources\lexical\apertium_hbs\COPYING" />
+    <None Include="resources\lexical\apertium_hbs\eng-hbs.prob" />
+    <None Include="resources\lexical\apertium_hbs\hbs-eng.prob" />
+    <None Include="resources\lexical\apertium_hbs\INSTALL" />
+    <None Include="resources\lexical\apertium_hbs\install-sh" />
+    <None Include="resources\lexical\apertium_hbs\Makefile.am" />
+    <None Include="resources\lexical\apertium_hbs\Makefile.in" />
+    <None Include="resources\lexical\apertium_hbs\missing" />
+    <None Include="resources\lexical\apertium_hbs\NEWS" />
+    <None Include="resources\lexical\apertium_hbs\README" />
+    <None Include="resources\lexical\unitex\srlat\Dela\latDelacf-NepromU.bin" />
+    <None Include="resources\lexical\unitex\srlat\Dela\latDelacf-SrpskiU.bin" />
+    <None Include="resources\lexical\unitex\srlat\Dela\latdelaf-SrpskiU.bin" />
+    <None Include="resources\lexical\unitex\srlat\Dela\NewBrojSlovima.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Dela\NewBrojSlovima_norm-z.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Dela\sample-dlc.dic" />
+    <None Include="resources\lexical\unitex\srlat\Dela\sample-dlcf.dic" />
+    <None Include="resources\lexical\unitex\srlat\Elag\elag.rul" />
+    <None Include="resources\lexical\unitex\srlat\Elag\elag.rul-0.elg" />
+    <None Include="resources\lexical\unitex\srlat\Elag\hteti-V-conc.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\hteti-V.elg" />
+    <None Include="resources\lexical\unitex\srlat\Elag\hteti-V.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\hteti-V.grf" />
+    <None Include="resources\lexical\unitex\srlat\Elag\interj-conc.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\interj.elg" />
+    <None Include="resources\lexical\unitex\srlat\Elag\interj.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\interj.grf" />
+    <None Include="resources\lexical\unitex\srlat\Elag\mitiPRO-Eric-conc.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\mitiPRO-Eric.elg" />
+    <None Include="resources\lexical\unitex\srlat\Elag\mitiPRO-Eric.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\mitiPRO-Eric.grf" />
+    <None Include="resources\lexical\unitex\srlat\Elag\PREP-V-conc.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\PREP-V.elg" />
+    <None Include="resources\lexical\unitex\srlat\Elag\PREP-V.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\PREP-V.grf" />
+    <None Include="resources\lexical\unitex\srlat\Elag\tiPRO-1-conc.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\tiPRO-1.elg" />
+    <None Include="resources\lexical\unitex\srlat\Elag\tiPRO-1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Elag\tiPRO-1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Normalization\elizije.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Normalization\Norm.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Normalization\Norm.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Replace\caracteres_speciaux.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Replace\elizije.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Replace\Replace.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Replace\Replace.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Replace\ReplaceTEI.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Replace\ReplaceTEI.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Replace\skracenice.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\matematika.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\NenN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\NN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Nombres.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\RN Hundred.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\RN Ten.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\RN Thousand.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\RN Unit.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\RN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\RomanNumerals.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence-dij.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence-recepti.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence-recepti.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence-xml.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence-xml.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Sentence1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\SequenceTEI.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\SequenceTEI.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\skracenice-dij.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\skracenice.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\Valute.grf" />
+    <None Include="resources\lexical\unitex\srlat\Graphs\Preprocessing\Sentence\VelikoSlovo.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA2.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA2.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA3.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA3.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA4.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_2XA4.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_A3XN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_A3XN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_A3XN2.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_A3XN2.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_AXA.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\AC_AXA.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XAXN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XAXN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XAXN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XAXN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN2.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN2.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN3.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN3.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN3XN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN3XN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN4.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN4.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN5.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN5.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN6.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN6.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN7.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_2XN7.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_4XN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_4XN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_4XN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_4XN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_4XNr.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_4XNr.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_A3XN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_A3XN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXNXN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXNXN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXNXN1m.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXAXNXN1m.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN2X1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN2X1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN2Xa.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN2Xa.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN3.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN3.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN3XN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXN3XN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNF.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNF.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNr.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNr.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNXN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNXN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNXN1m.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_AXNXN1m.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_ImePrezime.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_ImePrezime.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X2.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X2.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X3.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N2X3.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XAXN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XAXN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XAXNt.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XAXNt.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XNa.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XNa.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XNt.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N3XNt.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4X.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4X.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4X1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4X1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4Xa.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4Xa.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4Xp.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4Xp.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4Xsp.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_N4Xsp.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NF4X.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NF4X.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXA3.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXA3.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXAXN1.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXAXN1.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN2.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN2.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN2m.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN2m.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN2X2m.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN2X2m.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN3.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXN3.grf" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXNF.fst2" />
+    <None Include="resources\lexical\unitex\srlat\Inflection\NC_NXNF.grf" />
+    <None Include="resources\lexical\unitex\srlat\ReadMe.pdf" />
+    <None Include="resources\lexical\unitex\sr\unitex_delacf.dic" />
+    <None Include="resources\lexical\unitex\sr\unitex_delaf.dic" />
+    <None Include="resources\lexical\unitex\sr\unitex_delaf_immutable.dic" />
+    <None Include="resources\lexical\unitex\UnitexDoc.chm" />
+    <None Include="resources\lexical\unitex\UnitexManual.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\imbNLP.Transliteration\imbNLP.Transliteration.csproj">
+      <Project>{dd2c4d78-77e8-480b-a0a2-b51a6bf3808e}</Project>
+      <Name>imbNLP.Transliteration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+</Project>
